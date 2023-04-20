@@ -1,26 +1,22 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from "./gallery-items.js";
 
-const galleryEl = document.querySelector('.gallery');
+const galleryEl = document.querySelector(".gallery");
 
-const createImg = galleryItems.map(el => {
-    const {preview,original,description} = el;
-    return `<li class="gallery__item">
+const createImg = galleryItems.map((el) => {
+  const { preview, original, description } = el;
+  return `<li class="gallery__item">
     <a class="gallery__link" href="${original}">
     <img class="gallery__image"
         src="${preview}"
         alt="${description}"
         loading="lazy"/>
     </a>
-  </li>`
-})
+  </li>`;
+});
 
-galleryEl.insertAdjacentHTML("beforeend", createImg.join(""))
+galleryEl.insertAdjacentHTML("beforeend", createImg.join(""));
 
-const fullImg = new SimpleLightbox('.gallery a')
-
-
-
-
-
-
-
+var lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
