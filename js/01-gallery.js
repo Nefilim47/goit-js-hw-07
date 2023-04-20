@@ -2,6 +2,7 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryEl = document.querySelector('.gallery');
 
+
 console.log(galleryItems);
 
 const createImg = galleryItems.map(el => {
